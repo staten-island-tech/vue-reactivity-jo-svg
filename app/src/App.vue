@@ -4,27 +4,33 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    
+  <div class="view_container">
 
+  </div>
+  <div class="container">
     <div class="wrapper">
-      
-
       <nav>
         <RouterLink to="/">Female</RouterLink>
         <RouterLink to="/about">Male</RouterLink>
+        <RouterLink to="/about">Male</RouterLink>
       </nav>
     </div>
-  </header>
+    <RouterView />
+  </div>
+  
 
-  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.view_container{
+  background-color: aqua;
+  width: 30rem;
 }
+.container{
+  background-color: rgb(214, 176, 176);
+  height: fit-content;
+}
+
 
 .logo {
   display: block;
@@ -57,17 +63,13 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+
 
   .logo {
     margin: 0 2rem 0 0;
   }
 
-  header .wrapper {
+  .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
@@ -81,5 +83,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} 
 </style>
