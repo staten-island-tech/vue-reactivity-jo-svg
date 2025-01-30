@@ -7,30 +7,32 @@ import HelloWorld from './components/HelloWorld.vue'
   <div class="view_container">
 
   </div>
-  <div class="container">
+  <div class="items_container">
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Female</RouterLink>
-        <RouterLink to="/about">Male</RouterLink>
-        <RouterLink to="/about">Male</RouterLink>
+        <RouterLink to="/hair">Hair</RouterLink>
+        <RouterLink to="/nose">Nose</RouterLink>
+        <RouterLink to="/skinColor">Skin Color</RouterLink>
       </nav>
     </div>
     <RouterView />
   </div>
-  
-
 </template>
 
 <style scoped>
 .view_container{
   background-color: aqua;
-  width: 30rem;
+  width: 50rem;
 }
-.container{
+.items_container{
   background-color: rgb(214, 176, 176);
   height: fit-content;
 }
-
+.wrapper{
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
 
 .logo {
   display: block;
