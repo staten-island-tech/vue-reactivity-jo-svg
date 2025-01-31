@@ -1,31 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HairView.vue'
+import HomeView from '../views/BaseView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/hair',
-      name: 'hair',
-      component: () => import('../views/HairView.vue'),
+      path: '/base',
+      name: 'base',
+      component: () => import('../views/BaseView.vue'),
     },
     {
-      path: '/nose',
-      name: 'nose',
+      path: '/frosting',
+      name: 'frosting',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/NoseView.vue'),
+      component: () => import('../views/FrostingView.vue'),
     },
     {
-      path: '/skinColor',
-      name: 'skin color',
-      component: () => import('../views/SkinColor.vue'),
+      path: '/topper',
+      name: 'topper',
+      component: () => import('../views/TopperView.vue'),
     },
     {
-      path: '/expression',
-      name: 'expression',
-      component: () => import('../views/ExpressionView.vue'),
+      path: '/candles',
+      name: 'candles',
+      component: () => import('../views/CandlesView.vue'),
+    },
+    {
+      path: '/decor',
+      name: 'decor',
+      component: () => import('../views/DecorView.vue'),
     },
   ],
 })
