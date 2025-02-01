@@ -18,11 +18,6 @@ const router = createRouter({
       component: () => import('../views/FrostingView.vue'),
     },
     {
-      path: '/topper',
-      name: 'topper',
-      component: () => import('../views/TopperView.vue'),
-    },
-    {
       path: '/candles',
       name: 'candles',
       component: () => import('../views/CandlesView.vue'),
