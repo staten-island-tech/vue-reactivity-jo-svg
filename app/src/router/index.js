@@ -23,9 +23,9 @@ const router = createRouter({
       component: () => import('../views/CandlesView.vue'),
     },
     {
-      path: '/decor',
-      name: 'decor',
-      component: () => import('../views/DecorView.vue'),
+      path: '/topping',
+      name: 'topping',
+      component: () => import('../views/ToppingView.vue'),
     },
   ],
 })
