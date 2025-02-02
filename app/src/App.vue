@@ -32,7 +32,7 @@ import BaseView from './views/BaseView.vue';
     <div class="items_container border-3 border-[#6B3B56] absolute bottom-8 left-1/2 rounded-3xl transform -translate-x-1/2 w-[80%] h-[23%] p-5 bg-white">
       <div class="wrapper mb-5 mt-1">
         <nav class="">
-          <RouterLink to="/base" class=" border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">Base Cake</RouterLink>
+          <RouterLink to="/" class=" border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">Base Cake</RouterLink>
           <RouterLink to="/frosting" class="bg-[#db5c86] text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"> Frosting</RouterLink>
           <RouterLink to="/decor" class="bg-[#db5c86] text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"> Decoration</RouterLink>
           <RouterLink to="/candles" class="bg-[#db5c86] text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">Candles</RouterLink>
