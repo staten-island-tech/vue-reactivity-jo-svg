@@ -31,7 +31,7 @@ import BaseView from './views/BaseView.vue';
 
       <div class="search_bar w-full h-14 flex justify-center items-center bg-[#f8cbad] border-t-3 border-[#6B3B56]">
         
-        <span>&#10227;</span>
+        <!-- <span>&#10227;</span> -->
         <div class="search w-7/9 h-8 bg-white flex items-center rounded-2xl px-4">
           <a class="tracking-[0.25em] hover:underline" target="_blank" href="https://docs.google.com/presentation/d/1UsfFp7J5B5ybeGB2X2Feux_T49h_AL7I1ig6PvjcyuI/edit?usp=sharing">
             https://cakeshop.com
@@ -52,10 +52,10 @@ import BaseView from './views/BaseView.vue';
     <div class="items_container border-3 border-[#6B3B56] absolute bottom-4 left-1/2 rounded-3xl transform -translate-x-1/2 w-[80%] h-[24%] p-5 bg-white">
       <div class="wrapper">
         <nav class="flex gap-x-[1rem] mb-3">
-          <RouterLink to="/" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[0.5%] rounded-lg hover:bg-pink-600 transition">Base Cake</RouterLink>
-          <RouterLink to="/frosting" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[0.5%] rounded-lg hover:bg-pink-600 transition"> Frosting</RouterLink>
-          <RouterLink to="/topping" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[0.5%] rounded-lg hover:bg-pink-600 transition"> Topping</RouterLink>
-          <RouterLink to="/candles" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[0.5%] rounded-lg hover:bg-pink-600 transition">Candles</RouterLink>
+          <RouterLink to="/" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Base Cake</RouterLink>
+          <RouterLink to="/frosting" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"> Frosting</RouterLink>
+          <RouterLink to="/topping" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"> Topping</RouterLink>
+          <RouterLink to="/candles" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Candles</RouterLink>
         </nav>
       </div>
       <RouterView />
