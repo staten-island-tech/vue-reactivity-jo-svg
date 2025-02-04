@@ -1,11 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue';
-import BaseView from './views/BaseView.vue';
+
 </script>
 
 <template>
   <div class="entire flex h-screen bg-[#F8CFDD] bg-cover bg-center">
+    
     <div class="side">
       <img src="/bow.png" alt="" class="w-[5%] absolute left-[2.5%] top-[15%]">
       <img src="/swirl.png" alt="" class="w-[5%] absolute left-[2.5%] top-[45%]">
@@ -16,7 +17,6 @@ import BaseView from './views/BaseView.vue';
       <img src="/swirl.png" alt="" class="w-[5%] absolute right-[2.5%] top-[45%]">
       <img src="/bow.png" alt="" class="w-[5%] absolute right-[2.5%] top-[75%]">
     </div>
-    
 
     <div class="view_container bg-[#6B3B56] w-[80%] h-[70%] absolute top-6 left-1/2 transform -translate-x-1/2 overflow-hidden rounded-3xl p-[4px] flex flex-col">
       <div class="tab w-full rounded-t-3xl h-14 bg-[#eb7fa3]">
@@ -52,10 +52,11 @@ import BaseView from './views/BaseView.vue';
     <div class="items_container border-3 border-[#6B3B56] absolute bottom-4 left-1/2 rounded-3xl transform -translate-x-1/2 w-[80%] h-[24%] p-5 bg-white">
       <div class="wrapper">
         <nav class="flex gap-x-[1rem] mb-3">
-          <RouterLink to="/" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Base Cake</RouterLink>
-          <RouterLink to="/frosting" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"> Frosting</RouterLink>
-          <RouterLink to="/topping" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"> Topping</RouterLink>
-          <RouterLink to="/candles" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Candles</RouterLink>
+          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Base Cake</button>
+          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Frosting</button>
+          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Toppings</button>
+          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Candles</button>
+          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Decorations</button>
         </nav>
       </div>
       <RouterView />
