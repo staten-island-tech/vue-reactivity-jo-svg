@@ -1,7 +1,34 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue';
+import CardContainer from './components/icons/CardContainer.vue';
 
+const categories = {
+  bases: [
+    { id: 1, image: '/vanBase.png', label: 'Vanilla Base' },
+    { id: 2, image: '/chocoBase.png', label: 'Chocolate Base' },
+    { id: 3, image: '/strawBase.png', label: 'Strawberry Base' },
+    { id: 4, image: '/redVelvetBase.png', label: 'Red Velvet Base' },
+    { id: 5, image: '/iceCreamBase.png', label: 'Ice Cream Base' },
+  ],
+  frostings: [
+    { id: 1, image: '/vanFrost.png', label: 'Vanilla Frost' },
+    { id: 2, image: '/chocoFrost.png', label: 'Chocolate Frost' },
+    { id: 3, image: '/strawFrost.png', label: 'Strawberry Frost' },
+    { id: 4, image: '/redFrost.png', label: 'Red Velvet Frost' },
+    { id: 5, image: '/cookiesNcreamFrost.png', label: 'Cookies N Cream Frost' },
+  ],
+  toppings: [
+    { id: 1, image: '/cherry.png', label: 'Cherry' },
+    { id: 2, image: '/frosts.png', label: 'Frostings' },
+    { id: 3, image: '/oreo.png', label: 'Oreo' },
+    { id: 4, image: '/pinkRibbon.png', label: 'Pink Ribbon' },
+    { id: 5, image: '/redToppingThing.png', label: 'Red' },
+    { id: 6, image: '/sprinkles.png', label: 'Sprinkles' },
+    { id: 7, image: '/whiteRibbon.png', label: 'White Ribbon' },
+    { id: 8, image: '/chocolateTop.png', label: 'Chocolate' },
+  ],
+};
 </script>
 
 <template>
@@ -28,10 +55,7 @@ import { ref } from 'vue';
       </div>
       <img src="/xx.png" alt="" class="w-8 absolute top-4 right-4 cursor-pointer">
       <img src="/mini.png" alt="" class="w-8 absolute top-4 right-16 cursor-pointer">
-
       <div class="search_bar w-full h-14 flex justify-center items-center bg-[#f8cbad] border-t-3 border-[#6B3B56]">
-        
-        <!-- <span>&#10227;</span> -->
         <div class="search w-7/9 h-8 bg-white flex items-center rounded-2xl px-4">
           <a class="tracking-[0.25em] hover:underline" target="_blank" href="https://docs.google.com/presentation/d/1UsfFp7J5B5ybeGB2X2Feux_T49h_AL7I1ig6PvjcyuI/edit?usp=sharing">
             https://cakeshop.com
@@ -45,20 +69,19 @@ import { ref } from 'vue';
 
       </div>
       <div class="view w-full bg-white flex-1 border-t-3 border-[#6B3B56] rounded-b-3xl overflow-auto">
-
       </div>
     </div>
-
     <div class="items_container border-3 border-[#6B3B56] absolute bottom-4 left-1/2 rounded-3xl transform -translate-x-1/2 w-[80%] h-[24%] p-5 bg-white">
       <div class="wrapper">
         <nav class="flex gap-x-[1rem] mb-3">
-          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Base Cake</button>
-          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Frosting</button>
-          <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Toppings</button>
+          <button @click="changeCategory('bases')" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Base Cake</button>
+          <button @click="changeCategory('Frosting')" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Frosting</button>
+          <button @click="changeCategory('Toppings')" class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Toppings</button>
           <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Candles</button>
           <button class="h-[40px] border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">Decorations</button>
         </nav>
       </div>
+      <CardContainer :selectedCategory="selectedCategory" />
       <RouterView />
     </div>
   </div>
