@@ -15,7 +15,6 @@
       @click="selectCard(item)" 
       class="card cursor-pointer w-fit rounded-2xl bg-amber-200"
     >
-      <!-- the key allows vue to track the cards --> 
       <img 
         :src="item.image" 
         :alt="item.name" 
@@ -37,12 +36,14 @@ const selectCard = (item) => {
   const updatedItems = props.selectedCategory.items.map(i => {
     //map creates a new array checking each i to see if they were clicked
     if (i.id === item.id) {
+      console.log(item.selected);
       return { id: i.id, image: i.image, name: i.name, selected: !i.selected };
+      
     } else {
-      return { id: i.id, image: i.image, name: i.name, selected: i.selected };
+      console.log(i.selected, i.name);  
+      return { id: i.id, image: i.image, name: i.name, selected: false };
     }
   });
-
   emit('update:selectedItems', updatedItems);
 };
 
