@@ -48,12 +48,12 @@ const changeCategory = (categoryName) => {
 const updateSelected = (updatedItems) => {
   selectedCategory.value.items = updatedItems;
 };
-
+const direction = ref('right');
 </script>
 
 <template>
   <div class="entire flex relative h-screen bg-[#F8CFDD] bg-cover bg-center">
-   
+    <SidePart :direction="'right'"/> 
     <!-- <div class="side">
       <img src="/bow.png" alt="" class="w-[5%] absolute left-[2.5%] top-[10%]">
       <img src="/swirl.png" alt="" class="w-[5%] absolute left-[2.5%] top-[40%]">
