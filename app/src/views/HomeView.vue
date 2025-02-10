@@ -2,7 +2,6 @@
 import { ref, watchEffect } from 'vue';
 import CardContainer from '@/components/icons/CardContainer.vue';
 import OnScreen from '@/components/icons/OnScreen.vue';
-import SidePart from '@/components/icons/SidePart.vue';
 const categories = {
   bases: [
     { id: 1, image: '/vanBase.png', name: 'Vanilla Base', selected: false },
@@ -48,13 +47,13 @@ const changeCategory = (categoryName) => {
 const updateSelected = (updatedItems) => {
   selectedCategory.value.items = updatedItems;
 };
-const direction = ref('right');
+
 </script>
 
 <template>
   <div class="entire flex relative h-screen bg-[#F8CFDD] bg-cover bg-center">
-    <SidePart :direction="'right'"/> 
-    <!-- <div class="side">
+ 
+    <div class="side">
       <img src="/bow.png" alt="" class="w-[5%] absolute left-[2.5%] top-[10%]">
       <img src="/swirl.png" alt="" class="w-[5%] absolute left-[2.5%] top-[40%]">
       <img src="/bow.png" alt="" class="w-[5%] absolute left-[2.5%] top-[70%]">
@@ -63,7 +62,7 @@ const direction = ref('right');
       <img src="/bow.png" alt="" class="w-[5%] absolute right-[2.5%] top-[10%]">
       <img src="/swirl.png" alt="" class="w-[5%] absolute right-[2.5%] top-[40%]">
       <img src="/bow.png" alt="" class="w-[5%] absolute right-[2.5%] top-[70%]">
-    </div> -->
+    </div> 
 
     <div class="view_container bg-[#6B3B56] w-[80%] h-[70%] absolute top-6 left-1/2 transform -translate-x-1/2 overflow-hidden rounded-3xl p-[4px] flex flex-col">
       <div class="tab w-full rounded-t-3xl h-14 bg-[#eb7fa3]">
