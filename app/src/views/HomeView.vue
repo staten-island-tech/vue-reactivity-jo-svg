@@ -85,9 +85,9 @@ const updateSelected = (updatedItems) => {
           <span class="block h-[4px] w-[100%] bg-[#77151A] rounded-full"></span>
           <span class="block h-[4px] w-[100%] bg-[#77151A] rounded-full"></span>
         </div>
-
+        
       </div>
-    
+      
       <OnScreen :onScreenItems="onScreenItems" />
 
     </div>

@@ -38,7 +38,6 @@ const selectCard = (item) => {
     if (i.id === item.id) {
       console.log(item.selected);
       return { id: i.id, image: i.image, name: i.name, selected: !i.selected };
-      
     } else {
       console.log(i.selected, i.name);  
       return { id: i.id, image: i.image, name: i.name, selected: false };
