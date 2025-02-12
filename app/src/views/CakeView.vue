@@ -16,12 +16,16 @@
             <img src="/shelfPart.png" alt="" class=" absolute">
         </div> -->
         
-       
     </div>
 
 </template>
 
 <script>
+import { ref } from 'vue';
+const submittedItems = ref({
+
+})
+
 
 </script>
 
