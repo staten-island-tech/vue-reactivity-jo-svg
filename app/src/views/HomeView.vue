@@ -1,8 +1,8 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { ref, onMounted, watchEffect } from 'vue';
 import CardContainer from '@/components/icons/CardContainer.vue';
 import OnScreen from '@/components/icons/OnScreen.vue';
-const categories = {
+const categories = ref({
   bases: [
     { id: 1, image: '/vanBase.png', name: 'Vanilla Base', selected: false },
     { id: 2, image: '/chocoBase.png', name: 'Chocolate Base', selected: false },
@@ -18,36 +18,72 @@ const categories = {
     { id: 5, image: '/cookiesNcreamFrost.png', name: 'Cookies N Cream Frost', selected: false },
   ],
   toppings: [
-    { id: 1, image: '/cherry.png', name: 'Cherry', selected: false },
-    { id: 2, image: '/frosts.png', name: 'Frostings', selected: false },
-    { id: 3, image: '/oreo.png', name: 'Oreo', selected: false },
-    { id: 4, image: '/pinkRibbon.png', name: 'Pink Ribbon', selected: false },
-    { id: 5, image: '/redToppingThing.png', name: 'Red', selected: false },
-    { id: 6, image: '/sprinkles.png', name: 'Sprinkles', selected: false },
-    { id: 7, image: '/whiteRibbon.png', name: 'White Ribbon', selected: false },
-    { id: 8, image: '/chocolateTop.png', name: 'Chocolate', selected: false },
+    { id: 1, image: '/chocolateTop.png', name: 'Chocolate', selected: false },
+    { id: 2, image: '/sprinkles.png', name: 'Sprinkles', selected: false },
+    { id: 3, image: '/redToppingThing.png', name: 'Red', selected: false },
+    { id: 4, image: '/oreo.png', name: 'Oreo', selected: false },
+    { id: 5, image: '/frosts.png', name: 'Frostings', selected: false },
+    { id: 6, image: '/cherry.png', name: 'Cherry', selected: false },
+    { id: 7, image: '/pinkRibbon.png', name: 'Pink Ribbon', selected: false },
+    { id: 8, image: '/whiteRibbon.png', name: 'White Ribbon', selected: false },
   ],
-
   candles: [
 
   ]
-};
-
-const selectedCategory = ref({ name: 'bases', items: categories.bases });
-const onScreenItems = ref([]);
-watchEffect(() => {
-  onScreenItems.value = selectedCategory.value.items.filter(item => item.selected);
 });
+
+const selectedCategory = ref({ name: 'bases', items: categories.value.bases});
+//Everything inside a ref() needs .value to access or update it 
+//Without .value, you’re trying to grab toys without opening the chest. ❌
+//With .value, you unlock the chest and actually get the toys inside. ✅
+const onScreenItems = ref([]);
+//storing the stuff that is on screen
 const changeCategory = (categoryName) => {
-  selectedCategory.value = {
-    name: categoryName, 
-    items: categories[categoryName] || [] 
-  };
+  selectedCategory.value.name = categoryName;
+  selectedCategory.value.items = categories.value[categoryName];
+  // Update onScreenItems after changing category
+  updateOnScreenItems();
 };
+//changes the category 
 const updateSelected = (updatedItems) => {
+  categories.value[selectedCategory.value.name] = updatedItems;
+  //finds the current category inside categories
+  //before you click a button, it contains all the categories (such as base, frosting, etc.)
+  //after you click it clears all but that one category u clicked, set it to updatedItems so it replaces the old list to the new one
   selectedCategory.value.items = updatedItems;
+  //this line updates the items 
+  // we need both lines bc the second one will only update instantly but it will reset after switch catergory 
+  Object.keys(categories.value).forEach(category => {
+    //object contains everything, since its object.keys rn it shows bases, frostings, toppings, and candles
+    localStorage.setItem(category, JSON.stringify(categories.value[category]));
+    //localStorage.setItem(key, value) - Saves Data
+    //The key is like the title of a page.
+    //The value is like the thing you’re saving under that title.
+  });
+  updateOnScreenItems();
+  // Save updated items to localStorage
+};
+// Load selections from localStorage on page reload
+onMounted(() => {
+  Object.keys(categories.value).forEach(category => {
+    const savedItems = localStorage.getItem(category);
+    if (savedItems) {
+      categories.value[category] = JSON.parse(savedItems);
+    }
+  });
+  updateOnScreenItems(); // Ensure selected items appear on reload
+});
+const updateOnScreenItems = () => {
+  // Get all selected items across all categories
+  onScreenItems.value = Object.values(categories.value)
+    .flat() // Merge all category arrays into one array
+    .filter(item => item.selected); // Keep only selected items
 };
 
+watchEffect(() => {
+  console.log("onScreenItems: ", onScreenItems.value);
+  updateOnScreenItems();
+});
 </script>
 
 <template>

@@ -28,22 +28,39 @@
 import { defineProps, defineEmits } from 'vue';
 
 const emit = defineEmits(['update:selectedItems', 'changeCategory']);
+//This lets the code send updates when something changes.
 const props = defineProps({
   selectedCategory: Object, 
+  //This brings in some information, like which category of cards you’re looking at.
 });
 
 const selectCard = (item) => {
-  const updatedItems = props.selectedCategory.items.map(i => {
-    //map creates a new array checking each i to see if they were clicked
-    if (i.id === item.id) {
-      console.log(item.selected);
-      return { id: i.id, image: i.image, name: i.name, selected: !i.selected };
-    } else {
-      console.log(i.selected, i.name);  
-      return { id: i.id, image: i.image, name: i.name, selected: false };
-    }
-  });
-  emit('update:selectedItems', updatedItems);
+  if (props.selectedCategory.name == 'toppings' || props.selectedCategory.name == 'candles'){
+    const updatedItems = props.selectedCategory.items.map(i => {
+      if (i.id === item.id) {
+        console.log(`Toggling selected for ${item.name}:`, !item.selected);
+        return { id: i.id, image: i.image, name: i.name, selected: !i.selected }; //toggle items
+      } else {
+        return i; //keep unchanged
+      }
+    });
+    
+    emit('update:selectedItems', updatedItems);
+  }
+  else{
+    const updatedItems = props.selectedCategory.items.map(i => {
+      //map creates a new array checking each i to see if they were clicked
+      if (i.id === item.id) {
+        console.log(item.selected);
+        return { id: i.id, image: i.image, name: i.name, selected: !i.selected };
+      } else {
+        console.log(i.selected, i.name);  
+        return { id: i.id, image: i.image, name: i.name, selected: false };
+      }
+    });
+    emit('update:selectedItems', updatedItems);
+    console.log(emit);
+  }
 };
 
 
