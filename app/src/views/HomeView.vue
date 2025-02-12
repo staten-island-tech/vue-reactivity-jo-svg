@@ -20,9 +20,9 @@ const categories = ref({
   toppings: [
     { id: 1, image: '/chocolateTop.png', name: 'Chocolate', selected: false },
     { id: 2, image: '/sprinkles.png', name: 'Sprinkles', selected: false },
-    { id: 3, image: '/redToppingThing.png', name: 'Red', selected: false },
-    { id: 4, image: '/oreo.png', name: 'Oreo', selected: false },
-    { id: 5, image: '/frosts.png', name: 'Frostings', selected: false },
+    { id: 3, image: '/frosts.png', name: 'Frostings', selected: false },
+    { id: 4, image: '/redToppingThing.png', name: 'Red', selected: false },
+    { id: 5, image: '/oreo.png', name: 'Oreo', selected: false },
     { id: 6, image: '/cherry.png', name: 'Cherry', selected: false },
     { id: 7, image: '/pinkRibbon.png', name: 'Pink Ribbon', selected: false },
     { id: 8, image: '/whiteRibbon.png', name: 'White Ribbon', selected: false },
