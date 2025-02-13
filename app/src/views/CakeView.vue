@@ -23,7 +23,7 @@
 <script>
 import { ref } from 'vue';
 const submittedItems = ref({
-
+    
 })
 
 
