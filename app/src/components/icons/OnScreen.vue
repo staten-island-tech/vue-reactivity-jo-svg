@@ -24,7 +24,10 @@ const props = defineProps({
   }
 });
 
-
+/* const AddItemToInventory = ()=>{
+  const selectedItems = onScreenItems; 
+  emit('submitSelectedItems', selectedItems);
+} */
 </script>
 
 <style scoped>

@@ -11,11 +11,13 @@
             <img src="/bow.png" alt="" class="w-[7%] absolute right-[4%] top-[70%]">
         </div> 
         
-        <img src="/bakery.png" alt="" class="w-[65%] h-[95%] absolute my-10 left-[50%] transform -translate-x-[50%]">
-        <!-- <div class="">
-            <img src="/shelfPart.png" alt="" class=" absolute">
-        </div> -->
-        
+        <div class="relative w-[60%] h-[95%] my-10 left-[50%] transform -translate-x-[50%]">
+            <!-- Bakery Image -->
+            <img src="/bakery.png" alt="" class="h-full w-full ">
+
+            <!-- Shelf Image (Positioned inside bakery image) -->
+            <img src="/shelfPart.png" alt="" class="absolute top-0 left-0 w-full h-full bg-repeat">
+        </div>
     </div>
 
 </template>
@@ -26,7 +28,10 @@ const submittedItems = ref({
     
 })
 
-
+const handleSelectedItems = (selectedItems) => {
+    selectedItems.value = selectedItems;
+    console.log("Selected items have been added:", selectedItemsArray.value);
+}
 </script>
 
 <style  scoped>
