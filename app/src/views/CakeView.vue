@@ -24,9 +24,7 @@
 
 <script>
 import { ref } from 'vue';
-const submittedItems = ref({
-    
-})
+
 
 const handleSelectedItems = (selectedItems) => {
     selectedItems.value = selectedItems;

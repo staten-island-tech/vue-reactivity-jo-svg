@@ -10,7 +10,7 @@
             class="w-full absolute left-1/2 transform -translate-x-1/2 z-10"
           />
         </div>
-        <button class="h-[40px] absolute right-10 border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"><a href="/inventory" class="">Submit! ></a></button>
+        <button class="h-[40px] a bsolute right-10 border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"><a href="/inventory" class="">Submit! ></a></button>
     </div>
 
 </template>
@@ -27,7 +27,7 @@ const props = defineProps({
 /* const AddItemToInventory = ()=>{
   const selectedItems = onScreenItems; 
   emit('submitSelectedItems', selectedItems);
-} */
+}  */
 </script>
 
 <style scoped>

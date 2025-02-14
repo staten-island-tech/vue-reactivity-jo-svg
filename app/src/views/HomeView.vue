@@ -31,7 +31,9 @@ const categories = ref({
 
   ]
 });
-
+const submittedItems = ref({
+    
+})
 const selectedCategory = ref({ name: 'bases', items: categories.value.bases});
 //Everything inside a ref() needs .value to access or update it 
 //Without .value, you’re trying to grab toys without opening the chest. ❌
