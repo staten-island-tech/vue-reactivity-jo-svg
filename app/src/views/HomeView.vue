@@ -81,7 +81,6 @@ const updateOnScreenItems = () => {
     .flat() // Merge all category arrays into one array
     .filter(item => item.selected); // Keep only selected items
 };
-
 watchEffect(() => {
   console.log("onScreenItems: ", onScreenItems.value);
   updateOnScreenItems();
@@ -90,7 +89,6 @@ watchEffect(() => {
 
 <template>
   <div class="entire flex relative h-screen bg-[#F8CFDD] bg-cover bg-center">
- 
     <div class="side">
       <img src="/bow.png" alt="" class="w-[5%] absolute left-[2.5%] top-[10%]">
       <img src="/swirl.png" alt="" class="w-[5%] absolute left-[2.5%] top-[40%]">
