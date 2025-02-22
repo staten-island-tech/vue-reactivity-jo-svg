@@ -10,24 +10,25 @@
             class="w-full absolute left-1/2 transform -translate-x-1/2 z-10"
           />
         </div>
-        <button class="h-[40px] a bsolute right-10 border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition"><a href="/inventory" class="">Submit! ></a></button>
+        <button @click="AddItemToInventory" class="h-[40px] a bsolute right-10 border-4 border-[#db5c86] bg-[#f7afc7] text-white px-4 py-[5px] rounded-lg hover:bg-pink-600 transition">submit<!-- <a href="/inventory">Submit! ></a> --></button>
     </div>
 
 </template>
 
 <script setup>
-
+import { defineProps, defineEmits } from 'vue';
+const emit = defineEmits();
 const props = defineProps({
   onScreenItems: {
     type: Array,
     required: true
   }
 });
-
-/* const AddItemToInventory = ()=>{
-  const selectedItems = onScreenItems; 
-  emit('submitSelectedItems', selectedItems);
-}  */
+const AddItemToInventory = ()=>{
+  const submittedItems = props.onScreenItems; 
+  console.log(submittedItems);
+  emit('submitSelectedItems', submittedItems);
+} 
 </script>
 
 <style scoped>
