@@ -28,21 +28,25 @@ const categories = ref({
     { id: 8, image: '/whiteRibbon.png', name: 'White Ribbon', selected: false },
   ],
   candles: [
-
+    { id: 1, image: '/oneBlueCandle.png', name: 'One Blue Candle', selected: false },
+    { id: 2, image: '/oneRedCandle.png', name: 'One Red Candle', selected: false },
+    { id: 3, image: '/onePinkCandle.png', name: 'One Pink Candle', selected: false },
+    { id: 4, image: '/twoBlueCandle.png', name: 'Two Blue Candle', selected: false },
+    { id: 5, image: '/twoRedCandle.png', name: 'Two Red Candle', selected: false },
+    { id: 6, image: '/twoPinkCandle.png', name: 'Two Pink Candle', selected: false },
   ]
 });
-const submittedItems = ref({
-    
-})
 const selectedCategory = ref({ name: 'bases', items: categories.value.bases});
 //Everything inside a ref() needs .value to access or update it 
 //Without .value, you’re trying to grab toys without opening the chest. ❌
 //With .value, you unlock the chest and actually get the toys inside. ✅
 const onScreenItems = ref([]);
 //storing the stuff that is on screen
+
 const changeCategory = (categoryName) => {
   selectedCategory.value.name = categoryName;
   selectedCategory.value.items = categories.value[categoryName];
+  console.log(categoryName);
   // Update onScreenItems after changing category
   updateOnScreenItems();
 };
@@ -124,14 +128,15 @@ watchEffect(() => {
         
       </div>
       
-      <OnScreen :onScreenItems="onScreenItems" />
+      <OnScreen :onScreenItems="onScreenItems"  />
 
     </div>
     <div class="items_container border-3 border-[#6B3B56] absolute bottom-4 left-1/2 rounded-3xl transform -translate-x-1/2 w-[80%] h-[24%] p-5 bg-white">
       <CardContainer :selectedCategory="selectedCategory"
         @update:selectedItems="updateSelected"
         @changeCategory="changeCategory"/>
-      
+    
+
     </div>
   </div>
 </template>
